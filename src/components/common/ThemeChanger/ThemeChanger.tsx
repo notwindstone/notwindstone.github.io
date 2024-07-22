@@ -11,12 +11,11 @@ export default function ThemeChanger() {
 
     return (
         <>
-            <div className="flex flex-col items-center">
-                <button
-                    onClick={toggleTheme}
-                    className="w-6 h-6 i-carbon-sun dark:i-carbon-moon w-6 h-6"
-                />
-            </div>
+            <button
+                light="i-carbon-sun w-6 h-6"
+                dark="i-carbon-moon w-6 h-6"
+                onClick={toggleTheme}
+            />
         </>
     );
 }
