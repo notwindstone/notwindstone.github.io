@@ -4,7 +4,6 @@ import {
     presetAttributify,
     presetIcons,
     presetUno,
-    presetWebFonts
 } from 'unocss';
 
 export default defineConfig({
@@ -12,6 +11,5 @@ export default defineConfig({
         presetUno(),
         presetAttributify(),
         presetIcons(),
-        presetWebFonts(),
     ],
 });
