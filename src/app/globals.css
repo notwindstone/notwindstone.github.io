@@ -2,7 +2,11 @@
 @unocss all;
 
 :root {
+  --wine-bg-color: white;
+}
 
+[data-theme='dark'] {
+  --wine-bg-color: black;
 }
 
 body {
