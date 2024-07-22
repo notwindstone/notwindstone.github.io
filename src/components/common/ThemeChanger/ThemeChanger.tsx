@@ -7,10 +7,18 @@ export default function ThemeChanger() {
 
     return (
         <>
-            <div>
+            <div className="flex flex-col items-center">
                 The current theme is: {theme}
-                <button onClick={() => setTheme('light')}>Light Mode</button>
-                <button onClick={() => setTheme('dark')}>Dark Mode</button>
+                <button
+                    onClick={() => setTheme('light')}
+                >
+                    Light Mode
+                </button>
+                <button
+                    onClick={() => setTheme('dark')}
+                >
+                    Dark Mode
+                </button>
             </div>
         </>
     );
