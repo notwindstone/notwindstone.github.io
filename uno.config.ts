@@ -5,6 +5,8 @@ import {
 
 export default defineConfig({
     presets: [
-        presetUno(),
+        presetUno({
+            dark: "class",
+        }),
     ],
 });

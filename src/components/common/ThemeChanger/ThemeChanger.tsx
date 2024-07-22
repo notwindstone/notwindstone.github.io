@@ -3,12 +3,11 @@
 import {useTheme} from "next-themes";
 
 export default function ThemeChanger() {
-    const { theme, setTheme } = useTheme();
+    const { setTheme } = useTheme();
 
     return (
         <>
             <div className="flex flex-col items-center">
-                The current theme is: {theme}
                 <button
                     onClick={() => setTheme('light')}
                 >
