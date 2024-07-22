@@ -1,4 +1,4 @@
-const UnoCSS = require('@unocss/webpack').default;
+import UnoCSS from '@unocss/webpack';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,4 +11,4 @@ const nextConfig = {
     },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
