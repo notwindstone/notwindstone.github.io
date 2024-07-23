@@ -15,6 +15,7 @@ export default function ThemeChanger() {
                 light="i-carbon-sun w-6 h-6"
                 dark="i-carbon-moon w-6 h-6"
                 onClick={toggleTheme}
+                aria-label="change theme button"
             />
         </>
     );
