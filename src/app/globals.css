@@ -2,13 +2,14 @@
 @unocss all;
 
 :root {
-  --wine-bg-color: white;
+    --wine-bg-color: #ebe5f5;
 }
 
-[data-theme='dark'] {
-  --wine-bg-color: black;
+.dark {
+    --wine-bg-color: #1a1918;
 }
 
 body {
-  margin: 0;
+    background: var(--wine-bg-color);
+    margin: 0;
 }
