@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .main-container {
     font-family: 'Lato', sans-serif;
     width: fit-content;
@@ -6,16 +8,23 @@
 }
 
 .ck-content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
     word-break: break-word;
 }
 
-.editor-container_classic-editor .editor-container__editor {
-    min-width: 795px;
-    max-width: 795px;
+.ck-editor__main .ck-content {
+    background: var(--wine-bg-color) !important;
 }
 
-.editor-container_include-block-toolbar {
-    margin-left: 42px;
+@media screen and (max-width: 1024px) {
+    .ck-editor__main {
+        width: calc(100vw - 48px) !important;
+    }
+
+    .ck-toolbar {
+        width: calc(100vw - 48px) !important;
+    }
 }
