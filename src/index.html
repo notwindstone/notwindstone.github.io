@@ -13,31 +13,62 @@
                 <a href="#">ʕ•ᴥ•ʔ mi.css</a>
             </h1>
             <nav style="display:flex;gap:8px;font-size:0.8em">
-                <a style="text-decoration:underline;" onclick="root.innerHTML=pages.html">All HTML</a>
-                <a style="text-decoration:underline" onclick="root.innerHTML=pages.post">Post Example</a>
-                <a style="text-decoration:underline" onclick="root.innerHTML=pages.form">Form Example</a>
-                <a style="text-decoration:underline" onclick="changeTheme()">Change Theme</a>
+                <a style="text-decoration:underline;" onclick="routePush('?page=home')">
+                    All HTML
+                </a>
+                <a style="text-decoration:underline" onclick="routePush('?page=post')">
+                    Post Example
+                </a>
+                <a style="text-decoration:underline" onclick="routePush('?page=form')">
+                    Form Example
+                </a>
+                <a style="text-decoration:underline" onclick="changeTheme()">
+                    Change Theme
+                </a>
             </nav>
         </header>
         <div id='root'>
         </div>
     </body>
     <script>
-        function changeTheme() {
-            var currentTheme = document.documentElement.getAttribute('data-theme') || "dark";
-            const replacements = {
-                dark: "light",
-                light: "dark",
-            };
-
-            document.documentElement.setAttribute('data-theme', replacements[currentTheme]);
+        function routePush(searchParams) {
+            window.history.replaceState(null, null, searchParams)
+            loadPage(searchParams)
         }
 
-        console.log(window.location.pathname)
+        function loadPage(currentPage) {
+            switch (currentPage) {
+                case "?page=home":
+                    root.innerHTML=pages.html
 
-        var root = document.getElementById('root');
-        var pages = {
-            html: `
+                    break
+                case "?page=form":
+                    root.innerHTML=pages.form
+
+                    break
+                case "?page=post":
+                    root.innerHTML=pages.post
+
+                    break
+                default:
+                    root.innerHTML=pages.html
+            }
+        }
+
+        function changeTheme() {
+            var currentTheme = document.documentElement.getAttribute('data-theme') || "dark"
+            const replacements = {
+                dark: "light",
+                light: "dark"
+            }
+
+            document.documentElement.setAttribute('data-theme', replacements[currentTheme])
+        }
+
+        var root = document.getElementById('root')
+
+        // Page templates start
+        var htmlPage = `
      <main>
 
        <blockquote>Credits to <a href="https://gist.github.com/jaredpalmer/2f37ab6d57b6bc88719a9272a3799bee">jaredpalmer/all-html-elements.html</a>
@@ -339,8 +370,8 @@
           <button type="button" disabled>&lt;button disabled&gt;</button>
        </p>
     </article>
-        `,
-            form: `
+        `
+        var formPage = `
     <h2>Newsletter Form Example</h2>
     <form>
       <fieldset>
@@ -387,8 +418,8 @@
         <p>Already have an account? <a href="#">Sign in</a></p>
       </div>
     </form>
-        `,
-            post: `
+        `
+        var postPage = `
      <main>
         <img src="https://cdn.leonardo.ai/users/b023ed56-e866-4238-980f-af56a8b7ea42/generations/01d0116c-c48c-40c7-8997-892c8242df47/Leonardo_Anime_XL_A_resilient_postapocalyptic_waifu_survivor_h_1.jpg" />
         <blockquote>
@@ -443,7 +474,16 @@
         <p>#JavaScript #WebDev #FrameworkWars #AtomicBomb</p>
     </main>
         `
+        // Page templates end
+
+        var pages = {
+            html: htmlPage,
+            form: formPage,
+            post: postPage
         }
-        root.innerHTML=pages.html
+
+        var currentPage = window.location.search
+
+        loadPage(currentPage)
     </script>
 </html>

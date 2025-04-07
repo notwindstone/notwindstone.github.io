@@ -1,0 +1,8 @@
+{
+  "css": {
+    "type": "clean-css",
+    "clean-css": {
+      "compatibility": "ie7"
+    }
+  }
+}
