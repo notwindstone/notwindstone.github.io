@@ -87,7 +87,17 @@ a:hover {
 
 pre {
     padding: 1em;
-    border-radius: 3px;
+}
+
+pre,
+img,
+input,
+textarea,
+select,
+legend,
+fieldset,
+button {
+    border-radius: 4px;
 }
 
 img {
