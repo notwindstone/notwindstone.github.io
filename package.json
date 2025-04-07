@@ -1,7 +1,7 @@
 {
   "name": "notwindstone-website",
   "scripts": {
-    "minify": "minify src/mi.css > dist/_minified.css && minify src/index.html > dist/_minified.html"
+    "minify": "minify src/mi.css > dist/_minified.css && minify src/index.html > dist/index.html"
   },
   "devDependencies": {
     "minify": "^14.0.0"
