@@ -10,20 +10,20 @@
     <body>
         <header style="margin:0">
             <h1 style="margin:0">
-                <a href="#">ʕ•ᴥ•ʔ mi.css</a>
+                <a href="#">notwindstone</a>
             </h1>
-            <nav style="display:flex;gap:8px;font-size:0.8em">
+            <nav style="display:flex;gap:8px;font-size:0.8em;user-select:none">
                 <a style="text-decoration:underline;" onclick="routePush('?page=home')">
-                    All HTML
-                </a>
-                <a style="text-decoration:underline" onclick="routePush('?page=post')">
-                    Post Example
-                </a>
-                <a style="text-decoration:underline" onclick="routePush('?page=form')">
-                    Form Example
-                </a>
+                    Home
+                </a> -
+                <a style="text-decoration:underline" onclick="routePush('?page=projects')">
+                    Projects
+                </a> -
+                <a style="text-decoration:underline" onclick="routePush('?page=contact')">
+                    Contact
+                </a> -
                 <a style="text-decoration:underline" onclick="changeTheme()">
-                    Change Theme
+                    ✨ Change Theme
                 </a>
             </nav>
         </header>
@@ -39,25 +39,26 @@
         function loadPage(currentPage) {
             switch (currentPage) {
                 case "?page=home":
-                    root.innerHTML=pages.html
+                    root.innerHTML=pages.home
 
                     break
-                case "?page=form":
-                    root.innerHTML=pages.form
+                case "?page=projects":
+                    root.innerHTML=pages.projects
 
                     break
-                case "?page=post":
-                    root.innerHTML=pages.post
+                case "?page=contact":
+                    root.innerHTML=pages.contact
 
                     break
                 default:
-                    root.innerHTML=pages.html
+                    root.innerHTML=pages.home
             }
         }
 
         function changeTheme() {
+            // dark theme is default
             var currentTheme = document.documentElement.getAttribute('data-theme') || "dark"
-            const replacements = {
+            var replacements = {
                 dark: "light",
                 light: "dark"
             }
@@ -68,88 +69,28 @@
         var root = document.getElementById('root')
 
         // Page templates start
-        var htmlPage = `
-     <main>
-        <img src="https://github.com/michaelScopic/Wallpapers/blob/main/anime/Konachan.com_-_376008_sample.jpg?raw=true" alt="Konachan">
-       <blockquote>Credits to <a href="https://gist.github.com/jaredpalmer/2f37ab6d57b6bc88719a9272a3799bee">jaredpalmer/all-html-elements.html</a>
-       </blockquote>
-       <p>This is a test page filled with common HTML elements to be a preview of <a href="https://github.com/FelipeIzolan/mi.css">mi.css</a> preset. </p>
+        var homePage = `
+    <main>
+        <img src="../assets/shitlib.webp" alt="Konachan">
+        <blockquote>Inspired by this shitpost (i don't have the source) and made using <a href="https://github.com/FelipeIzolan/mi.css">mi.css</a></blockquote>
     </main>
-    <hr />
-    <ul>
-       <li>
-          <span>Text</span>
-          <ul>
-             <li>
-                <a href="#text__headings">Headings</a>
-             </li>
-             <li>
-                <a href="#text__paragraphs">Paragraphs</a>
-             </li>
-             <li>
-                <a href="#text__blockquotes">Blockquotes</a>
-             </li>
-             <li>
-                <a href="#text__lists">Lists</a>
-             </li>
-             <li>
-                <a href="#text__definition_lists">Definition Lists</a>
-             </li>
-             <li>
-                <a href="#text__tables">Tables</a>
-             </li>
-             <li>
-                <a href="#text__code">Code</a>
-             </li>
-          </ul>
-       </li>
-       <li>
-          <span>Form Elements</span>
-          <ul>
-             <li>
-                <a href="#forms__inputs">Inputs</a>
-             </li>
-             <li>
-                <a href="#forms__selects">Selects</a>
-             </li>
-             <li>
-                <a href="#forms__checkboxs">Checkboxes</a>
-             </li>
-             <li>
-                <a href="#forms__radios">Radios</a>
-             </li>
-             <li>
-                <a href="#forms__textareas">Textareas</a>
-             </li>
-             <li>
-                <a href="#forms__fieldsets">Fieldsets</a>
-             </li>
-             <li>
-                <a href="#forms__html5">HTML5 inputs</a>
-             </li>
-             <li>
-                <a href="#forms__action">Action buttons</a>
-             </li>
-          </ul>
-       </li>
-    </ul>
-    <hr />
     <article>
-       <h2 id="text__headings">Headings</h2>
-       <h1>Heading 1</h1>
-       <h2>Heading 2</h2>
-       <h2>Heading 3</h2>
-       <h4>Heading 4</h4>
-       <h5>Heading 5</h5>
-       <h6>Heading 6</h6>
+        <h2>Content</h2>
+        <ul>
+            <li>
+                <a href="#text__about-me">About me</a>
+            </li>
+            <li>
+                <a href="#text__my-skills">My skills</a>
+            </li>
+        </ul>
     </article>
-    <hr />
     <article>
-       <h2 id="text__paragraphs">Paragraphs</h2>
-       <p> Life’s all about the journey. Embrace the small moments, and remember—growth happens when you least expect it. Keep moving forward! </p>
-       <p> Life is meaningless. The moments come and go, and growth, if it occurs, is an accident. Keep moving, though it doesn’t really matter. </p>
+        <h2 id="text__about-me">About me</h2>
+        <p>
+            Hello! I'm an 18 year old fullstack typescript developer who is more interested in the frontend part.
+        </p>
     </article>
-    <hr />
     <article>
        <h2 id="text__blockquotes">Blockquotes</h2>
        <blockquote> "Innovation distinguishes between a leader and a follower." <br /> — Steve Jobs </blockquote>
@@ -371,7 +312,7 @@
        </p>
     </article>
         `
-        var formPage = `
+        var projectsPage = `
     <h2>Newsletter Form Example</h2>
     <form>
       <fieldset>
@@ -419,7 +360,7 @@
       </div>
     </form>
         `
-        var postPage = `
+        var contactPage = `
      <main>
         <img src="https://cdn.leonardo.ai/users/b023ed56-e866-4238-980f-af56a8b7ea42/generations/01d0116c-c48c-40c7-8997-892c8242df47/Leonardo_Anime_XL_A_resilient_postapocalyptic_waifu_survivor_h_1.jpg" />
         <blockquote>
@@ -477,9 +418,9 @@
         // Page templates end
 
         var pages = {
-            html: htmlPage,
-            form: formPage,
-            post: postPage
+            home: homePage,
+            projects: projectsPage,
+            contact: contactPage
         }
 
         var currentPage = window.location.search

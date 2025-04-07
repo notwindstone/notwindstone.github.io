@@ -1,6 +1,7 @@
 /* https://html-preview.github.io/?url=https://github.com/FelipeIzolan/mi.css/blob/main/index.html */
 /* https://github.com/FelipeIzolan/mi.css */
 /* https://www.reddit.com/r/webdev/comments/1jc2qlx/minimal_css_1kb_for_contentdriven_websites/ */
+/* this is not minified */
 
 :root {
     --primary-color: #f6f6f6;
@@ -33,11 +34,12 @@ body {
     max-width: 720px;
 }
 
+html,
 body,
 p,
 a,
 div {
-    transition: color 200ms ease;
+    transition: background-color 200ms ease, color 200ms ease;
 }
 
 /*/
@@ -66,10 +68,6 @@ blockquote {
 /*/
  * -------------------------------------------------- *
 /*/
-
-nav a {
-    user-select: none;
-}
 
 h1 a {
     text-decoration: none;
