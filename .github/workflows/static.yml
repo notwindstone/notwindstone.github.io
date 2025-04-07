@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update minified code
-      - run: npm run minify
+        run: npm run minify
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
