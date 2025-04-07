@@ -1,8 +1,27 @@
+/* https://html-preview.github.io/?url=https://github.com/FelipeIzolan/mi.css/blob/main/index.html */
+/* https://github.com/FelipeIzolan/mi.css */
+/* https://www.reddit.com/r/webdev/comments/1jc2qlx/minimal_css_1kb_for_contentdriven_websites/ */
+
+:root {
+    --primary-color: #f6f6f6;
+    --background-color: #101010;
+    --accent-color: #ebbcba;
+}
+
+[data-theme="light"] {
+    --primary-color: #212121;
+    --background-color: #f6f6f6;
+    --accent-color: #d7827e;
+}
+
 html,
 body {
-    color: #212121;
-    font-size: 16px;
     background: #f6f6f6;
+    background: var(--background-color);
+    color: #212121;
+    color: var(--primary-color);
+    scroll-behavior: smooth;
+    font-size: 16px;
     line-height: 1.4;
     font-family: monospace;
 }
@@ -11,6 +30,13 @@ body {
     margin: auto;
     padding: 1em;
     max-width: 720px;
+}
+
+body,
+p,
+a,
+div {
+    transition: color 200ms ease;
 }
 
 /*/
@@ -39,8 +65,22 @@ blockquote {
  * -------------------------------------------------- *
 /*/
 
+nav a {
+    user-select: none;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
 a {
     color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #d7827e;
+    color: var(--accent-color);
 }
 
 pre {
@@ -58,7 +98,8 @@ input {
 }
 
 blockquote {
-    border-left: 4px solid #212121;
+    border-left: 4px solid #d7827e;
+    border-color: var(--accent-color);
     padding-left: 1em;
 }
 
@@ -93,6 +134,7 @@ td,
 th,
 table {
     border: 1px solid #212121;
+    border-color: var(--primary-color);
     padding: 8px;
     border-collapse: collapse;
 }
@@ -103,7 +145,10 @@ select,
 legend,
 fieldset,
 textarea {
+    color: white;
+    color: var(--primary-color);
     border: 1px solid #212121;
+    border-color: var(--primary-color);
     outline: none;
     padding: 3px 7px;
     background: none;
@@ -115,5 +160,7 @@ input[type="reset"],
 input[type="button"],
 input[type="submit"] {
     color: #f6f6f6;
+    color: var(--background-color);
     background: #212121;
+    background: var(--primary-color);
 }
