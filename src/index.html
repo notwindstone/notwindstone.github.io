@@ -24,7 +24,7 @@
     </body>
     <script>
         function changeTheme() {
-            var currentTheme = document.documentElement.getAttribute('data-theme') ?? "dark";
+            var currentTheme = document.documentElement.getAttribute('data-theme') || "dark";
             const replacements = {
                 dark: "light",
                 light: "dark",
@@ -32,6 +32,8 @@
 
             document.documentElement.setAttribute('data-theme', replacements[currentTheme]);
         }
+
+        console.log(window.location.pathname)
 
         var root = document.getElementById('root');
         var pages = {
