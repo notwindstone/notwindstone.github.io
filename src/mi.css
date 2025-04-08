@@ -132,6 +132,10 @@ li > ol {
     padding: 0 1em;
 }
 
+li {
+    padding: 2px 0;
+}
+
 pre,
 code {
     color: white;
