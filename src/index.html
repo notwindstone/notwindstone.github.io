@@ -27,6 +27,7 @@
                 </a>
             </nav>
         </header>
+        <hr>
         <div id='root'>
         </div>
     </body>
@@ -70,157 +71,120 @@
 
         // Page templates start
         var homePage = `
-    <main>
-        <img src="./assets/shitlib.webp" alt="a meme about the difference between website designs' a few years ago and today">
-        <blockquote>Inspired by this shitpost (I don't have the source) and made using <a href="https://github.com/FelipeIzolan/mi.css">mi.css</a></blockquote>
-    </main>
-    <article>
-        <h2>Content</h2>
-        <ul>
-            <li>
-                <a href="#text__about-me">About me</a>
-            </li>
-            <li>
-                <a href="#text__my-skills">My skills</a>
-            </li>
-        </ul>
-    </article>
-    <article>
-        <h2 id="text__about-me">About me</h2>
-        <p>
-            Hello! I'm an 18 year old fullstack typescript developer who is more interested in the frontend part.
-        </p>
-    </article>
-    <article>
-        <h2 id="text__my-skills">My skills</h2>
-        <h3>I'm currently learning</h3>
-        <ul>
-            <li>typescript</li>
-            <li>go</li>
-            <li><a href="https://nextjs.org/">next.js</a> (typescript, fullstack framework)
-            </li>
-            <li><a href="https://elysiajs.com/">elysia.js</a> (typescript, backend framework)</li>
-            <li><a href="https://wails.io/">wails.js</a> (typescript & go, framework for desktop applications)</li>
-        </ul>
-        <h3>I have the most experience in</h3>
-        <ul>
-            <li><a href="https://nextjs.org/">next.js</a> (typescript, fullstack framework)</li>
-            <li><a href="https://tailwindcss.com/">tailwindcss</a> (css framework)</li>
-            <li><a href="https://tanstack.com/query/latest">tanstack query</a> (async state manager mainly used for fetching)</li>
-            <li><a href="https://orm.drizzle.team/">drizzle orm</a> (typesafe sql query builder)</li>
-        </ul>
-        <h3>Things I tried</h3>
-        <ul>
-            <li>kotlin</li>
-            <li>java</li>
-            <li><a href="https://nuxt.com/">nuxt</a> (typescript, fullstack framework)</li>
-            <li><a href="https://unocss.dev/">unocss</a> (css framework)</li>
-            <li><a href="https://mantine.dev/">mantine ui</a> (typescript, ui kit)</li>
-        </ul>
-    </article>
+            <main>
+                <img src="./assets/shitlib.webp" alt="a meme about the difference between website designs' a few years ago and today">
+                <blockquote>Inspired by this shitpost (I don't have the source) and made using <a href="https://github.com/FelipeIzolan/mi.css">mi.css</a></blockquote>
+            </main>
+            <article>
+                <h2>Content</h2>
+                <ul>
+                    <li>
+                        <a href="#text__about-me">About me</a>
+                    </li>
+                    <li>
+                        <a href="#text__my-skills">My skills</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2 id="text__about-me">About me</h2>
+                <p>
+                    Hello! I'm an 18 year old <span style="color:var(--accent-color)">fullstack typescript developer</span> who is especially interested in the <span style="color:var(--accent-color)">frontend</span> part.
+                </p>
+            </article>
+            <article>
+                <h2 id="text__my-skills">My skills</h2>
+                <h3>I'm currently learning</h3>
+                <ul>
+                    <li>typescript</li>
+                    <li>go</li>
+                    <li><a href="https://nextjs.org/" target="_blank">next.js</a> (typescript, fullstack framework)
+                    </li>
+                    <li><a href="https://elysiajs.com/" target="_blank">elysia.js</a> (typescript, backend framework)</li>
+                    <li><a href="https://wails.io/" target="_blank">wails.js</a> (typescript & go, framework for desktop applications)</li>
+                </ul>
+                <h3>I have the most experience in</h3>
+                <ul>
+                    <li><a href="https://nextjs.org/" target="_blank">next.js</a> (typescript, fullstack framework)</li>
+                    <li><a href="https://tailwindcss.com/" target="_blank">tailwindcss</a> (css framework)</li>
+                    <li><a href="https://tanstack.com/query/latest" target="_blank">tanstack query</a> (async state manager mainly used for fetching)</li>
+                    <li><a href="https://orm.drizzle.team/" target="_blank">drizzle orm</a> (typesafe sql query builder)</li>
+                </ul>
+                <h3>Things I tried</h3>
+                <ul>
+                    <li>kotlin</li>
+                    <li>java</li>
+                    <li><a href="https://nuxt.com/" target="_blank">nuxt</a> (typescript, fullstack framework)</li>
+                    <li><a href="https://unocss.dev/" target="_blank">unocss</a> (css framework)</li>
+                    <li><a href="https://mantine.dev/" target="_blank">mantine ui</a> (typescript, ui kit)</li>
+                </ul>
+            </article>
         `
         var projectsPage = `
-    <h2>Newsletter Form Example</h2>
-    <form>
-      <fieldset>
-        <legend>Newsletter</legend>
-        <h4>🚀 Level up your tech skills! 💻</h4>
-        <div style="padding-bottom: 1em">
-          <input type="email" id="email" name="email" placeholder="Email" required />
-          <button type="submit">Subscribe</button>
-        </div>
-      </fieldset>
-    </form>
-    <hr />
-    <h2>Sign Up Form Example</h2>
-    <form action="#" method="POST">
-      <div>
-        <label for="username">Username:</label><br />
-        <input type="text" id="username" name="username" required />
-      </div>
-      <div>
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div>
-        <label for="password">Password:</label><br />
-        <input type="password" id="password" name="password" required />
-      </div>
-      <fieldset>
-        <legend>Role</legend>
-        <div>
-          <input id="role__admin" type="radio" name="role" />
-          <label for="role__admin">Admin</label>
-        </div>
-        <div>
-          <input id="role__moderator" type="radio" name="role" />
-          <label for="role__moderator">Moderator</label>
-        </div>
-        <div>
-          <input id="role__user" type="radio" name="role" />
-          <label for="role__user">User</label>
-        </div>
-      </fieldset>
-      <div>
-        <button type="submit" class="submit-btn">Sign Up</button>
-        <p>Already have an account? <a href="#">Sign in</a></p>
-      </div>
-    </form>
+            <h2>My projects</h2>
+            <article>
+                <h3>Zen Auth <span style="opacity:50%">- Feb 15, 2025</span></h3>
+                <p>
+                    Comprehensive authentication system for next.js.
+                </p>
+                <blockquote>
+                    tech stack: next.js, typescript, tailwindcss, drizzle orm, tanstack query, oslojs, arctic, redis, postgresql, tanstack virtual
+                </blockquote>
+                <img src="./assets/zen-auth-home.webp" alt="Zen Auth home screen">
+            </article>
+            <article>
+                <h3>Freesm Launcher website <span style="opacity:50%">- Dec 30, 2024</span></h3>
+                <p>
+                    Interactive website for a minecraft launcher.
+                </p>
+                <blockquote>
+                    tech stack: next.js, typescript, tailwindcss, tanstack query, oslojs, zustand, next-intl, mantine hooks
+                </blockquote>
+                <img src="./assets/freesmlauncher-website-home.webp" alt="Freesmlauncher website home screen">
+            </article>
+            <article>
+                <h3>...between these two projects lay many other unfinished ones...</h3>
+            </article>
+            <article>
+                <h3>Anisun <span style="opacity:50%">- Mar 17, 2024</span></h3>
+                <p>
+                    Anime streaming website with accounts and comments.
+                </p>
+                <blockquote>
+                    tech stack: next.js, typescript, mantine ui, drizzle orm, tanstack query, postgresql, next-intl, mantine hooks, embla carousel, dayjs, vidstack, kodikwrapper, serwist, clerk, tanstack virtual
+                </blockquote>
+                <blockquote>
+                    note: this is my second programming project, which is currently the largest (due to my weak knowledge it has many flaws)
+                </blockquote>
+                <img src="./assets/anisun-home.webp" alt="Anisun home screen">
+            </article>
+            <article>
+                <h3>Keyboard wiki <span style="opacity:50%">- Mar 8, 2024</span></h3>
+                <p>
+                    Keyboard wiki website.
+                </p>
+                <blockquote>
+                    tech stack: vite, react, typescript, mantine ui, tanstack router, mdx
+                </blockquote>
+                <blockquote>
+                    note: this is my first huge programming project
+                </blockquote>
+                <img src="./assets/keyboard-wiki-home.webp" alt="Keyboard wiki home screen">
+            </article>
+            <hr>
+            <h2>Maintaining these</h2>
+            <article>
+                <h3>Freesm Launcher</h3>
+                <p>
+                    Customized Prism Launcher fork aimed to provide a free way to play Minecraft.
+                </p>
+                <blockquote>
+                    tech stack: qt, c++
+                </blockquote>
+                <img src="./assets/freesmlauncher-home.webp" alt="Freesm Launcher home screen">
+            </article>
         `
         var contactPage = `
-     <main>
-        <img src="https://cdn.leonardo.ai/users/b023ed56-e866-4238-980f-af56a8b7ea42/generations/01d0116c-c48c-40c7-8997-892c8242df47/Leonardo_Anime_XL_A_resilient_postapocalyptic_waifu_survivor_h_1.jpg" />
-        <blockquote>
-            Post generated with DeepSeek & Image with Leonardo AI
-        </blockquote>
-        <h1>Why Every JavaScript Framework Sucks (The solution is an Atomic Bomb!)</h1>
-        <p>
-            Let’s face it: every JavaScript framework has its flaws. React? Too much boilerplate. Angular? Overly complex. Vue? Great, but not perfect. Svelte? Close, but still not <em>the one</em>. The truth is, no framework can solve
-            <em>everything</em> without introducing new problems.
-        </p>
-        <p>
-            The real issue? We keep building on top of bloated foundations. The solution? An <strong>Atomic Bomb</strong>—blow it all up and start fresh. Simplify. Strip it down to the essentials. No more endless configs, no more dependency
-            hell. Just pure, clean, efficient code.
-        </p>
-        <p>Maybe the next big thing isn’t another framework—it’s a revolution. 💥</p>
-        <h2>The solution: AtomicJS</h2>
-        <p>The framework that does absolutely nothing—because sometimes, less is more.</p>
-        <p>With AtomicJS, you don’t need to worry about state management, virtual DOMs, or reactive data binding. Instead, you get two functions: addHTML and renderHTML. That’s it. No fluff, no nonsense. Just pure, unadulterated simplicity.</p>
-        <pre>
-    <code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> htmlStorage</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {};</span></span>
-    <span class="line"></span>
-    <span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> addHTML</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">html</span><span style="color:#E1E4E8">) {</span></span>
-    <span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8"> key </span><span style="color:#F97583">!==</span><span style="color:#9ECBFF"> 'string'</span><span style="color:#E1E4E8">) {</span></span>
-    <span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Key must be a string'</span><span style="color:#E1E4E8">);</span></span>
-    <span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8">;</span></span>
-    <span class="line"><span style="color:#E1E4E8">    }</span></span>
-    <span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8"> html </span><span style="color:#F97583">!==</span><span style="color:#9ECBFF"> 'string'</span><span style="color:#E1E4E8">) {</span></span>
-    <span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'HTML must be a string'</span><span style="color:#E1E4E8">);</span></span>
-    <span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8">;</span></span>
-    <span class="line"><span style="color:#E1E4E8">    }</span></span>
-    <span class="line"><span style="color:#E1E4E8">    htmlStorage[key] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> html;</span></span>
-    <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">\`HTML added with key: ${`</span><span style="color:#E1E4E8">key</span><span style="color:#9ECBFF">`}\`</span><span style="color:#E1E4E8">);</span></span>
-    <span class="line"><span style="color:#E1E4E8">}</span></span>
-    <span class="line"></span>
-    <span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> renderHTML</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">) {</span></span>
-    <span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">htmlStorage[key]) {</span></span>
-    <span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">\`No HTML found for key: ${`</span><span style="color:#E1E4E8">key</span><span style="color:#9ECBFF">`}\`</span><span style="color:#E1E4E8">);</span></span>
-    <span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8">;</span></span>
-    <span class="line"><span style="color:#E1E4E8">    }</span></span>
-    <span class="line"><span style="color:#E1E4E8">    document.body.innerHTML </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> htmlStorage[key];</span></span>
-    <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">\`HTML rendered for key: ${`</span><span style="color:#E1E4E8">key</span><span style="color:#9ECBFF">`}\`</span><span style="color:#E1E4E8">);</span></span>
-    <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-
-        <p><b>Here’s how it works:</b></p>
-        <ol>
-            <li>Store your HTML in a global object.</li>
-            <li>Render it when you feel like it.</li>
-            <li>That’s it. You’re done.</li>
-        </ol>
-        <p>No more overthinking. No more decision fatigue. Just HTML and a dream.</p>
-
-        <p>#JavaScript #WebDev #FrameworkWars #AtomicBomb</p>
-    </main>
         `
         // Page templates end
 
