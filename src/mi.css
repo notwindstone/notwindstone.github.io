@@ -38,7 +38,9 @@ html,
 body,
 p,
 a,
-div {
+div,
+span,
+h3 {
     transition: background-color 200ms ease, color 200ms ease;
 }
 
