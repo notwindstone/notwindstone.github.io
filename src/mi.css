@@ -1,7 +1,11 @@
-/* https://html-preview.github.io/?url=https://github.com/FelipeIzolan/mi.css/blob/main/index.html */
-/* https://github.com/FelipeIzolan/mi.css */
-/* https://www.reddit.com/r/webdev/comments/1jc2qlx/minimal_css_1kb_for_contentdriven_websites/ */
-/* this is not minified */
+/*
+ * You should minify this file
+ *
+ * mi.css original website: https://html-preview.github.io/?url=https://github.com/FelipeIzolan/mi.css/blob/main/index.html
+ * mi.css source code:      https://github.com/FelipeIzolan/mi.css
+ * mi.css reddit post:      https://www.reddit.com/r/webdev/comments/1jc2qlx/minimal_css_1kb_for_contentdriven_websites/
+ */
+
 
 :root {
     --primary-color: #f6f6f6;
@@ -15,12 +19,29 @@
     --accent-color: #d7827e;
 }
 
+/* 'You can remove these without thinking' section START */
+/* Don't show an underline for heading anchor tags */
+h1 a {
+    text-decoration: none;
+}
+
+/* Use accent-color for heading 3 */
+h3 {
+    color: #212121; /* fallback color */
+    color: var(--accent-color);
+}
+/* 'You can remove these without thinking' section END */
+
 html,
 body {
+    /*
+     *  accent color doesn't need a fallback color
+     *  because it's newer than css variables
+     */
     accent-color: var(--accent-color);
-    background: #f6f6f6; /* this is basically support for old browsers */
+    background: #f6f6f6; /* fallback color (this is basically support for old browsers) */
     background: var(--background-color);
-    color: #212121;
+    color: #212121; /* fallback color */
     color: var(--primary-color);
     scroll-behavior: smooth;
     font-size: 16px;
@@ -34,6 +55,32 @@ body {
     max-width: 720px;
 }
 
+/*
+ *  depending on the project, add or remove:
+ */
+nav,
+main,
+header,
+footer,
+section,
+article {
+    margin: 1em 0;
+}
+/*
+ * -------------------------------------------------- *
+ */
+dt,
+pre,
+form,
+table,
+fieldset,
+blockquote {
+    margin: 1em 0;
+}
+/*
+ * -------------------------------------------------- *
+*/
+
 html,
 body,
 p,
@@ -44,48 +91,13 @@ h3 {
     transition: background-color 200ms ease, color 200ms ease;
 }
 
-/*/
- *  depending on the project, add or remove:
-/*/
-nav,
-main,
-header,
-footer,
-section,
-article {
-    margin: 1em 0;
-}
-/*/
- * -------------------------------------------------- *
-/*/
-dt,
-pre,
-form,
-table,
-fieldset,
-blockquote {
-    margin: 1em 0;
-}
-
-/*/
- * -------------------------------------------------- *
-/*/
-
-h3 {
-    color: var(--accent-color);
-}
-
-h1 a {
-    text-decoration: none;
-}
-
 a {
     color: inherit;
     cursor: pointer;
 }
 
 a:hover {
-    color: #d7827e;
+    color: #d7827e; /* fallback color */
     color: var(--accent-color);
 }
 
@@ -114,7 +126,7 @@ input {
 }
 
 blockquote {
-    border-left: 4px solid #d7827e;
+    border-left: 4px solid #d7827e; /* fallback color */
     border-color: var(--accent-color);
     padding-left: 1em;
 }
@@ -153,7 +165,7 @@ button:disabled {
 td,
 th,
 table {
-    border: 1px solid #212121;
+    border: 1px solid #212121; /* fallback color */
     border-color: var(--primary-color);
     padding: 8px;
     border-collapse: collapse;
@@ -165,9 +177,9 @@ select,
 legend,
 fieldset,
 textarea {
-    color: #212121;
+    color: #212121; /* fallback color */
     color: var(--primary-color);
-    border: 1px solid #212121;
+    border: 1px solid #212121; /* fallback color */
     border-color: var(--primary-color);
     outline: none;
     padding: 3px 7px;
@@ -183,8 +195,8 @@ legend,
 input[type="reset"],
 input[type="button"],
 input[type="submit"] {
-    color: #f6f6f6;
+    color: #f6f6f6; /* fallback color */
     color: var(--background-color);
-    background: #212121;
+    background: #212121; /* fallback color */
     background: var(--primary-color);
 }
