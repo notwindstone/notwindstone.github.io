@@ -37,6 +37,14 @@ li span {
     font-size: 0.9em;
 }
 
+a img {
+    transition: transform 0.2s ease;
+}
+
+a img:hover {
+    transform: scale(1.025);
+}
+
 /* Don't show an underline for heading anchor tags */
 h1 a {
     text-decoration: none;
